@@ -14,22 +14,21 @@ import java.util.List;
 public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
     List<MyObject> list;
 
-    //ajouter un constructeur prenant en entrée une liste
+	//menambahkan konstruktor yang mengambil sebagai masukan daftar
     public MyAdapter(List<MyObject> list) {
         this.list = list;
     }
 
 
 
-    //cette fonction permet de créer les viewHolder
-    //et par la même indiquer la vue à inflater (à partir des layout xml)
+    ////Fungsi ini menciptakan viewHolder
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup viewGroup, int itemType) {
         View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.cell_cards,viewGroup,false);
         return new MyViewHolder(view);
     }
 
-    //c'est ici que nous allons remplir notre cellule avec le texte/image de chaque MyObjects
+    //di sinilah kita akan memenuhi sel kita dengan teks / gambar dari masing-masing myObjects
     @Override
     public void onBindViewHolder(MyViewHolder myViewHolder, int position) {
         MyObject myObject = list.get(position);
